@@ -5,4 +5,7 @@ class Lesson < ActiveRecord::Base
   has_many :videos
   has_many :lesson_tags
   has_many :tags, through: :lesson_tags
+
+  has_attached_file :image
+  do_not_validate_attachment_file_type :image
 end
