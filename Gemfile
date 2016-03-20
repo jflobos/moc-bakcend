@@ -35,6 +35,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Files uploading
 gem "paperclip", "~> 4.3"
 
+# ActiveAdmin Integration for controll the intances
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'pundit'
+gem 'draper'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
