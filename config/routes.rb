@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  scope path: "/api" do
+    api_version(module: "Api::V1", path: {value: "v1"}) do
+      resources :courses, only: [:show, :index] do
+        resources :lessons, only: [:show, :index]
+      end
+      resources :documents, only: [:show, :index]
+      resources :videos, only: [:show, :index]
+    end
+  end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
